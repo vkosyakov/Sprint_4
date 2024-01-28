@@ -1,4 +1,4 @@
-package com.scooter.testChrome;
+package com.scooter.answer;
 
 import com.scooter.BaseTest;
 import com.scooter.pageobject.fragments.SectionImportantQuestions;
@@ -9,16 +9,16 @@ import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
 public class SectionImortantQuestionsTest extends BaseTest {
-    private final String ansver;
-    private final int numberAnsver;
+    private final String answer;
+    private final int numberAnswer;
 
-    public SectionImortantQuestionsTest(String ansver, int numberAnsver) {
-        this.ansver= ansver;
-        this.numberAnsver = numberAnsver;
+    public SectionImortantQuestionsTest(String answer, int numberAnswer) {
+        this.answer= answer;
+        this.numberAnswer = numberAnswer;
     }
 
     @Parameterized.Parameters
-    public static Object[][] getAnsver() {
+    public static Object[][] getAnswer() {
         //Сгенерируй тестовые данные (нам нужно название городов и результат поиска)
         return new Object[][]{
                 {"Сутки — 400 рублей. Оплата курьеру — наличными или картой.", 0},
@@ -35,10 +35,10 @@ public class SectionImortantQuestionsTest extends BaseTest {
     }
 
     @Test
-    public void ansverTest() {
+    public void answerTest() {
         SectionImportantQuestions sectionImortantQuestions = new SectionImportantQuestions(driver);
         sectionImortantQuestions.waitImgScoter().scrollToQuestionsImportant();
-        Assert.assertEquals(ansver,sectionImortantQuestions.getTextAnsver(numberAnsver));
+        Assert.assertEquals(answer,sectionImortantQuestions.getTextAnswer(numberAnswer));
     }
 
 

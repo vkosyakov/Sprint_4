@@ -1,6 +1,6 @@
 package com.scooter;
 
-import com.scooter.pageobject.page.MainPage;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
@@ -11,17 +11,19 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseTest {
     protected WebDriver driver;
+    private final String URL = "https://qa-scooter.praktikum-services.ru/";
     @Before
     public void setUp() {
         String browser = System.getenv("BROWSER");
         driver = getDriver(browser == null ? "chrome" : browser);
-        driver.get(MainPage.URL);
-        setCoocie(new Cookie("Cartoshka","true"));
-        setCoocie(new Cookie("Cartoshka-legacy","true"));
+        driver.get(URL);
+        setCookie(new Cookie("Cartoshka","true"));
+        setCookie(new Cookie("Cartoshka-legacy","true"));
     }
 //метод для закрытия плашки с куками в домашней странице
-    private void setCoocie(Cookie coocie) {
-        driver.manage().addCookie(coocie);
+    //исправил опечатку CooKie
+    private void setCookie(Cookie cookie) {
+        driver.manage().addCookie(cookie);
         driver.navigate().refresh();
     }
 
