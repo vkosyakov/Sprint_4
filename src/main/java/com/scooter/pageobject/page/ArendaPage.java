@@ -5,8 +5,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.util.List;
-
 public class ArendaPage extends BasePage {
 
     //поле Когда сможете привезти самокат
@@ -20,7 +18,7 @@ public class ArendaPage extends BasePage {
 
     private By btnYes = By.xpath(".//button[@class and text() = 'Да']");
 
-    private By orderCancelled = By.xpath(".//div[text()='Заказ оформлен']");
+    private By orderProcessed= By.xpath(".//div[text()='Заказ оформлен']");
     public ArendaPage(WebDriver driver) {
         super(driver);
     }
@@ -63,8 +61,8 @@ public class ArendaPage extends BasePage {
         return this;
     }
 
-    public boolean isOrderCancelled(){
-        return driver.findElement(orderCancelled).isDisplayed();
+    public boolean isOrderProcessed(){
+        return driver.findElement(orderProcessed).isDisplayed();
     }
 
 }

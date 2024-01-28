@@ -14,7 +14,7 @@ public class SectionImportantQuestions extends BasePage {
     //локатор до списка элементов вопросы
     private By qustions = By.className("accordion__button");
     // локатор до списка элементов ответов
-    private By ansvers = By.className("accordion__panel");
+    private By answers = By.className("accordion__panel");
     private By imgScoter = By.xpath(".//img[@src = '/assets/ya.svg']");
 
     public SectionImportantQuestions(WebDriver driver) {
@@ -37,12 +37,12 @@ public class SectionImportantQuestions extends BasePage {
     }
 
     //взять текст у ответа
-    public String getTextAnsver(int numberAnsver){
+    public String getTextAnswer(int numberAnswer){
         //список вопросов
         List<WebElement> qustionsList = driver.findElements(qustions);
-        qustionsList.get(numberAnsver).click();
+        qustionsList.get(numberAnswer).click();
         //список ответов
-        List<WebElement> ansverList = driver.findElements(ansvers);
-        return ansverList.get(numberAnsver).getText();
+        List<WebElement> answerList = driver.findElements(answers);
+        return answerList.get(numberAnswer).getText();
     }
 }

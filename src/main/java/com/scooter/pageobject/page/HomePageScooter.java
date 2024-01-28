@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
-//класс галвной
+//класс галвной страницы
 public class HomePageScooter extends BasePage {
 
     public HomePageScooter(WebDriver driver) {
