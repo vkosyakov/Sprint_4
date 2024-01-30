@@ -10,11 +10,11 @@ import org.junit.runners.Parameterized;
 @RunWith(Parameterized.class)
 public class SectionImortantQuestionsTest extends BaseTest {
     private final String ansver;
-    private final int numberAnsver;
+    private final int numberAnswer;
 
-    public SectionImortantQuestionsTest(String ansver, int numberAnsver) {
+    public SectionImortantQuestionsTest(String ansver, int numberAnswer) {
         this.ansver= ansver;
-        this.numberAnsver = numberAnsver;
+        this.numberAnswer = numberAnswer;
     }
 
     @Parameterized.Parameters
@@ -38,7 +38,7 @@ public class SectionImortantQuestionsTest extends BaseTest {
     public void ansverTest() {
         SectionImportantQuestions sectionImortantQuestions = new SectionImportantQuestions(driver);
         sectionImortantQuestions.waitImgScoter().scrollToQuestionsImportant();
-        Assert.assertEquals(ansver,sectionImortantQuestions.getTextAnsver(numberAnsver));
+        Assert.assertEquals(ansver,sectionImortantQuestions.getTextAnswer(numberAnswer));
     }
 
 
