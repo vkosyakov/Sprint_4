@@ -19,7 +19,6 @@ public class SectionImortantQuestionsTest extends BaseTest {
 
     @Parameterized.Parameters
     public static Object[][] getAnswer() {
-        //Сгенерируй тестовые данные (нам нужно название городов и результат поиска)
         return new Object[][]{
                 {"Сутки — 400 рублей. Оплата курьеру — наличными или картой.", 0},
                 {"Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.", 1},
